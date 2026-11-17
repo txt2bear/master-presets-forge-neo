@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+# per-user runtime data (presets, quick sizes, orders)
+master_presets.json
+
+# release build output
+dist/
+
+# local publishing notes, not part of the extension
+PUBLISHING.md

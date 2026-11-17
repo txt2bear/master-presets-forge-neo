@@ -1,0 +1,207 @@
+{
+  "version": 2,
+  "presets": {
+    "Anima": {
+      "version": 2,
+      "model": {
+        "forgePreset": "anima",
+        "checkpoint": "sd\\anima_baseV10.safetensors",
+        "modules": [
+          "qwenImageVAE.safetensors",
+          "qwen_3_06b_base.safetensors"
+        ],
+        "dtype": "Automatic"
+      },
+      "generation": {
+        "width": 1024,
+        "height": 1024,
+        "steps": 32,
+        "cfg": 4,
+        "distilledCfg": 3,
+        "sampler": "ER SDE",
+        "scheduler": "Beta",
+        "styles": []
+      },
+      "prompts": null,
+      "savedFrom": "txt2img",
+      "updatedAt": "2026-09-23T17:05:28.972Z",
+      "createdAt": "2026-09-23T17:05:28.972Z"
+    },
+    "Zit": {
+      "version": 2,
+      "model": {
+        "forgePreset": "zit",
+        "checkpoint": "sd\\z_image_turbo_int8_convrot.safetensors",
+        "modules": [
+          "ae.sft",
+          "zImageTurboQuantized_textEncoderFp8Scaled.safetensors"
+        ],
+        "dtype": "Automatic"
+      },
+      "generation": {
+        "width": 1024,
+        "height": 1024,
+        "steps": 9,
+        "cfg": 1,
+        "distilledCfg": 9,
+        "sampler": "Euler",
+        "scheduler": "Beta",
+        "styles": []
+      },
+      "prompts": null,
+      "savedFrom": "txt2img",
+      "updatedAt": "2026-10-09T18:41:48.662Z",
+      "createdAt": "2026-10-09T18:41:48.663Z"
+    },
+    "Anima turbo fast": {
+      "version": 2,
+      "model": {
+        "forgePreset": "anima",
+        "checkpoint": "sd\\anima_baseV10.safetensors",
+        "modules": [
+          "qwenImageVAE.safetensors",
+          "qwen_3_06b_base.safetensors"
+        ],
+        "dtype": "Automatic"
+      },
+      "generation": {
+        "width": 1024,
+        "height": 1024,
+        "steps": 8,
+        "cfg": 1,
+        "distilledCfg": 3,
+        "sampler": "ER SDE",
+        "scheduler": "Beta",
+        "styles": []
+      },
+      "prompts": {
+        "positive": "<lora:anima-turbo-lora-v0.2:1>, \nmasterpiece, best quality, score_9, score_8, score_7, highres, absurdres, very aesthetic, year 2025",
+        "negative": "worst quality, low quality, normal quality, score_1, score_2, score_3, lowres, blurry, jpeg artifacts, compression artifacts, cropped, out of frame, watermark, logo, text, signature, username, artist name, web address, patreon logo, patreon username, censor, deformed, mutated, disfigured, bad anatomy, bad proportions, bad hands, malformed hands, missing fingers, extra fingers, extra digits, fewer digits, fused fingers, extra limbs, missing limbs, long neck, ugly, very displeasing"
+      },
+      "savedFrom": "txt2img",
+      "updatedAt": "2026-10-22T19:51:16.728Z",
+      "createdAt": "2026-10-22T19:50:40.448Z"
+    },
+    "Anima turbo balanced": {
+      "version": 2,
+      "model": {
+        "forgePreset": "anima",
+        "checkpoint": "sd\\anima_baseV10.safetensors",
+        "modules": [
+          "qwenImageVAE.safetensors",
+          "qwen_3_06b_base.safetensors"
+        ],
+        "dtype": "Automatic"
+      },
+      "generation": {
+        "width": 1024,
+        "height": 1024,
+        "steps": 12,
+        "cfg": 4,
+        "distilledCfg": 3,
+        "sampler": "ER SDE",
+        "scheduler": "Beta",
+        "styles": []
+      },
+      "prompts": {
+        "positive": "<lora:anima-turbo-lora-v0.2:0,7>, \nmasterpiece, best quality, score_9, score_8, score_7, highres, absurdres, very aesthetic, year 2025",
+        "negative": "worst quality, low quality, normal quality, score_1, score_2, score_3, lowres, blurry, jpeg artifacts, compression artifacts, cropped, out of frame, watermark, logo, text, signature, username, artist name, web address, patreon logo, patreon username, censor, deformed, mutated, disfigured, bad anatomy, bad proportions, bad hands, malformed hands, missing fingers, extra fingers, extra digits, fewer digits, fused fingers, extra limbs, missing limbs, long neck, ugly, very displeasing"
+      },
+      "savedFrom": "txt2img",
+      "updatedAt": "2026-10-22T19:51:57.360Z",
+      "createdAt": "2026-10-22T19:51:57.360Z"
+    },
+    "netayumelumina": {
+      "version": 2,
+      "model": {
+        "forgePreset": "lumina",
+        "checkpoint": "sd\\netaLuminaFp8_ntymV4Mptc.safetensors",
+        "modules": [
+          "ae.sft",
+          "netaLuminaFp8_gemma22bMp.safetensors"
+        ],
+        "dtype": "Automatic"
+      },
+      "generation": {
+        "width": 1024,
+        "height": 1024,
+        "steps": 32,
+        "cfg": 4,
+        "distilledCfg": 6,
+        "sampler": "Res Multistep",
+        "scheduler": "Simple",
+        "styles": [],
+        "seed": -1
+      },
+      "hires": {
+        "enabled": false,
+        "upscaler": "Latent",
+        "steps": 32,
+        "denoise": 0.6,
+        "scale": 2
+      },
+      "prompts": {
+        "positive": "You are an assistant designed to generate anime images based on textual prompts. <Prompt Start>\n+ Character: e.g., 1girl, 2boys, Briar - character name\n+ Art‑Style: e.g., pixel style, impasto, @yuki_ono artist\n+ Character Appearance: hair & eye colour, unique traits\n+ Clothing: uniforms, accessories, materials\n+ Expression & Action: mood, pose, gesture\n+ Camera / Positioning / Perspective: e.g., close‑up, upper body, bird’s‑eye,etc.\n+ Lighting & Effects: e.g., lighting flares, particles, magic circles\n+ Scene Atmosphere: environment, ambience keywords\n+ Quality Tag: e.g., masterpiece, best quality\n+ Natural‑language enrichment",
+        "negative": "You are an assistant designed to generate low-quality images based on textual prompts. <Prompt Start>\nblurry, worst quality, low quality, jpeg artifacts, signature, watermark,\nusername, error, deformed hands, bad anatomy, extra limbs, poorly drawn hands,\npoorly drawn face, mutation, deformed, extra eyes, extra arms, extra legs,\nmalformed limbs, fused fingers, too many fingers, long neck, cross‑eyed,\nbad proportions, missing arms, missing legs, extra digit, fewer digits,\ncropped, normal quality"
+      },
+      "savedFrom": "txt2img",
+      "updatedAt": "2026-11-08T12:53:21.974Z",
+      "createdAt": "2026-11-08T12:53:21.974Z"
+    }
+  },
+  "quickDimensions": [
+    {
+      "label": "1024×1024",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "label": "1024×768",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "label": "1216×832",
+      "width": 1216,
+      "height": 832
+    },
+    {
+      "label": "1344×768",
+      "width": 1344,
+      "height": 768
+    },
+    {
+      "label": "1536×656",
+      "width": 1536,
+      "height": 656
+    },
+    {
+      "label": "1920×820",
+      "width": 1920,
+      "height": 820
+    },
+    {
+      "label": "1920×1080",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "presetOrder": [
+    "Anima",
+    "Anima turbo balanced",
+    "Anima turbo fast",
+    "Zit",
+    "netayumelumina"
+  ],
+  "formatOrder": [
+    "1:1",
+    "3:4",
+    "4:3",
+    "2:3",
+    "3:2",
+    "9:16",
+    "16:9",
+    "21:9"
+  ],
+  "formatNames": {}
+}
